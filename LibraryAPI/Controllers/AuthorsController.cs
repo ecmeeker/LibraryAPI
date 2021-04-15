@@ -12,44 +12,44 @@ namespace LibraryAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BooksController : ControllerBase
+    public class AuthorsController : ControllerBase
     {
-        private readonly IBookService _bookService;
+        private readonly IAuthorService _authorService;
 
-        public BooksController(IBookService bookService)
+        public AuthorsController(IAuthorService authorService)
         {
-            _bookService = bookService;
+            _authorService = authorService;
         }
 
-        // GET: api/<BooksController>
+        // GET: api/<AuthorsController>
         [HttpGet]
-        public async Task<IEnumerable<Book>> GetAllAsync()
+        public async Task<IEnumerable<Author>> GetAllAsync()
         {
-            var books = await _bookService.ListAsync();
-            return books;
+            var authors = await _authorService.ListAsync();
+            return authors;
         }
 
-        // GET api/<BooksController>/5
+        // GET api/<AuthorsController>/5
         [HttpGet("{id}")]
-        public async Task<Book> Get(int id)
+        public async Task<Author> Get(int id)
         {
-            var book = await _bookService.ListAsync();
-            return book.Where(b => b.Id == id).FirstOrDefault();
+            var author = await _authorService.ListAsync();
+            return author.Where(b => b.Id == id).FirstOrDefault();
         }
 
-        // POST api/<BooksController>
+        // POST api/<AuthorsController>
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT api/<BooksController>/5
+        // PUT api/<AuthorsController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/<BooksController>/5
+        // DELETE api/<AuthorsController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
