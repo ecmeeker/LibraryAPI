@@ -34,4 +34,3 @@ C:\source\repos\LibraryAPI\Database\bin\Debug\netcoreapp3.1\Microsoft.Extensions
 C:\source\repos\LibraryAPI\Database\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\source\repos\LibraryAPI\Database\obj\Debug\netcoreapp3.1\Database.csproj.CoreCompileInputs.cache
 C:\source\repos\LibraryAPI\Database\obj\Debug\netcoreapp3.1\Database.MvcApplicationPartsAssemblyInfo.cache
-C:\source\repos\LibraryAPI\Database\obj\Debug\netcoreapp3.1\Database.csprojAssemblyReference.cache

@@ -40,6 +40,8 @@ namespace LibraryAPI
             services.AddScoped<IBookService, BookService>();
             services.AddScoped<IAuthorRepository, AuthorRepository>();
             services.AddScoped<IAuthorService, AuthorService>();
+            services.AddScoped<ISubjectRepository, SubjectRepository>();
+            services.AddScoped<ISubjectService, SubjectService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
