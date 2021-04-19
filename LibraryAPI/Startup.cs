@@ -15,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using AutoMapper;
+using Database.Repositories;
 
 namespace LibraryAPI
 {
@@ -43,6 +44,7 @@ namespace LibraryAPI
             services.AddScoped<IAuthorService, AuthorService>();
             services.AddScoped<ISubjectRepository, SubjectRepository>();
             services.AddScoped<ISubjectService, SubjectService>();
+            services.AddScoped<ITransaction, Transaction>();
 
             services.AddAutoMapper(typeof(Startup));
         }

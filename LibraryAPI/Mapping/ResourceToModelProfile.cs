@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace LibraryAPI.Mapping
 {
-    public class ModelToResourceProfile : Profile
+    public class ResourceToModelProfile : Profile
     {
-        public ModelToResourceProfile()
+        public ResourceToModelProfile()
         {
-            CreateMap<Book, BookResource>();
-            CreateMap<Author, AuthorResource>();
+            CreateMap<BookSaveResource, Book>();
+            CreateMap<AuthorSaveResource, Author>();
         }
     }
 }

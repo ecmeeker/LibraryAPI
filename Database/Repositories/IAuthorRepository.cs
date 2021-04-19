@@ -9,5 +9,6 @@ namespace LibraryAPI.Repositories
     public interface IAuthorRepository
     {
         Task<IEnumerable<Author>> ListAsync();
+        Task AddAsync(Author author);
     }
 }
