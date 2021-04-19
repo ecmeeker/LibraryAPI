@@ -19,5 +19,9 @@ namespace LibraryAPI.Repositories
         {
             return await _context.Authors.ToListAsync();
         }
+        public async Task AddAsync(Author author)
+        {
+            await _context.Authors.AddAsync(author);
+        }
     }
 }

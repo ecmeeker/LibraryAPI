@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace LibraryAPI.Repositories
 {
-    public interface IAuthorRepository
+    public interface ISubjectRepository
     {
-        Task<IEnumerable<Author>> ListAsync();
-        Task AddAsync(Author author);
+        Task<IEnumerable<Subject>> ListAsync();
     }
 }

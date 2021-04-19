@@ -32,6 +32,8 @@ C:\source\repos\LibraryAPI\Database\obj\Debug\netcoreapp3.1\Database.csproj.Copy
 C:\source\repos\LibraryAPI\Database\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 C:\source\repos\LibraryAPI\Database\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\source\repos\LibraryAPI\Database\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\source\repos\LibraryAPI\Database\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\source\repos\LibraryAPI\Database\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\source\repos\LibraryAPI\Database\obj\Debug\netcoreapp3.1\Database.csproj.CoreCompileInputs.cache
 C:\source\repos\LibraryAPI\Database\obj\Debug\netcoreapp3.1\Database.MvcApplicationPartsAssemblyInfo.cache
 C:\source\repos\LibraryAPI\Database\obj\Debug\netcoreapp3.1\Database.csprojAssemblyReference.cache

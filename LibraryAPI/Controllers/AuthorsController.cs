@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using LibraryAPI.Extensions;
 using LibraryAPI.Models;
 using LibraryAPI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -15,32 +17,55 @@ namespace LibraryAPI.Controllers
     public class AuthorsController : ControllerBase
     {
         private readonly IAuthorService _authorService;
+        private readonly IMapper _mapper;
 
-        public AuthorsController(IAuthorService authorService)
+        public AuthorsController(IAuthorService authorService, IMapper mapper)
         {
             _authorService = authorService;
+            _mapper = mapper;
         }
 
         // GET: api/<AuthorsController>
         [HttpGet]
-        public async Task<IEnumerable<Author>> GetAllAsync()
+        public async Task<IEnumerable<AuthorResource>> GetAllAsync()
         {
             var authors = await _authorService.ListAsync();
-            return authors;
+            var resources = _mapper.Map<IEnumerable<Author>, IEnumerable<AuthorResource>>(authors);
+
+            return resources;
         }
 
         // GET api/<AuthorsController>/5
         [HttpGet("{id}")]
-        public async Task<Author> Get(int id)
+        public async Task<AuthorResource> Get(int id)
         {
-            var author = await _authorService.ListAsync();
-            return author.Where(b => b.Id == id).FirstOrDefault();
+            var authors = await _authorService.ListAsync();
+            var author = authors.Where(b => b.Id == id).FirstOrDefault();
+            var resource = _mapper.Map<Author, AuthorResource>(author);
+
+            return resource;
         }
 
         // POST api/<AuthorsController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<IActionResult> PostAsync([FromBody] AuthorSaveResource resource)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState.GetErrorMessages());
+            }
+
+            var author = _mapper.Map<AuthorSaveResource, Author>(resource);
+            var result = await _authorService.SaveAsync(author);
+
+            if (!result.Success)
+            {
+                return BadRequest(result.Message);
+            }
+
+            var authorResource = _mapper.Map<Author, AuthorResource>(result.Author);
+
+            return Ok(authorResource);
         }
 
         // PUT api/<AuthorsController>/5

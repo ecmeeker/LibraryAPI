@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryAPI.Models
 {
-    public class Transaction
+    public class CheckBook
     {
         [ForeignKey("Book")]
         public Book Book { get; set; }
